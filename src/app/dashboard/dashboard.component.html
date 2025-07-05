@@ -1,0 +1,320 @@
+<div class="h-[100vh] w-full flex flex-col">
+  <div
+    class="w-full justify-between h-[76px] p-[16px] md:p-[32px] items-center flex"
+  >
+    <img src="/images/sch.png" alt="sch" class="w-[152px] h-[46px]" />
+    <img src="/images/Vector.png" alt="menu" class="w-[35px] h-[21.88px]" />
+  </div>
+  <div
+    class="pt-[61px] p-[16px] md:p-[32px] gap-[34.5px] flex flex-col pb-[40px] w-full"
+  >
+    <div class="flex flex-col gap-[10px] items-center justify-center">
+      <p
+        class="font-bold text-center text-[30px] leading-[30px] text-[#001A1A]"
+      >
+        We don’t just teach
+      </p>
+      <div class="flex w-[160px] justify-between items-center h-[33.5px]">
+        <p class="font-bold text-[30px] leading-[30px] text-[#001A1A]">We</p>
+        <img src="/images/ins.png" alt="" class="mt-2" />
+      </div>
+    </div>
+    <p
+      class="font-medium text-center text-[16px] leading-[26px] text-[#777777]"
+    >
+      Lorem ipsum dolor sit amet consectetur. Facilisis donec scelerisque auctor
+      risus sit aliquet. Commodo mauris nisl turpis porta vitae
+    </p>
+  </div>
+  <img
+    src="/images/frontimg.png"
+    alt=""
+    class="p-[16px] md:p-[32px] h-[350.8px] pb-[40px]"
+  />
+  <div
+    class="w-full gap-[20px] pb-[40px] p-[16px] md:p-[32px] items-center justify-center flex flex-row"
+  >
+    <button
+      class="w-[117px] font-semibold text-[14px] text-center text-[#fff] h-[40px] rounded-[5px] bg-[#9864F1]"
+    >
+      Get Started
+    </button>
+    <button
+      class="w-[90px] font-semibold text-[14px] text-center text-[#000000] h-[40px] rounded-[5px]"
+    >
+      intro
+    </button>
+  </div>
+  <div
+    class="flex h-[62px] p-[16px] md:p-[32px] flex-row justify-between w-full"
+  >
+    <div class="h-full flex flex-col gap-[10px]">
+      <div class="bg-[#FA7815] h-[4px] w-[30px]"></div>
+      <p class="font-medium text-[14px] leading-[24px] text-[#777]">
+        Clarification to difficult Questions
+      </p>
+    </div>
+    <div class="h-full flex flex-col gap-[10px]">
+      <div class="bg-[#FA7815] h-[4px] w-[30px]"></div>
+      <p class="font-medium text-[14px] leading-[24px] text-[#777]">
+        Clarification to difficult Questions
+      </p>
+    </div>
+  </div>
+  <!-- HOW ITS WORKS -->
+  <div
+    class="flex flex-col p-[16px] md:p-[32px] pt-[50px] items-center gap-[30px] w-full"
+  >
+    <div class="flex flex-col gap-[12px] w-full items-center">
+      <p class="font-normal text-[14px] leading-[24px] text-[#8353E2]">
+        HOW ITS WORKS
+      </p>
+      <p
+        class="font-bold text-center text-[24px] leading-[30px] text-[#171A1F]"
+      >
+        How is our tutoring <br />
+        service?
+      </p>
+    </div>
+    <div class="grid grid-cols-2 gap-[20px]">
+      @for (service of tutoringService; track $index) {
+      <div
+        class="w-[181px] p-[13px] h-[236px] rounded-[5px] flex flex-col gap-[16px] shadow-2xl drop-shadow-[#171A1F12]"
+      >
+        <img
+          src="{{ service.icon }}"
+          alt=""
+          class="w-[48px] h-[48px] rounded-[4px]"
+        />
+        <p
+          class="font-medium text-start text-[16px] leading-[20px] text-[#171A1F]"
+        >
+          {{ service.title }}
+        </p>
+        <p
+          class="font-normal text-start text-[12px] leading-[20px] text-[#9095A0]"
+        >
+          {{ service.description }}
+        </p>
+      </div>
+      }
+    </div>
+  </div>
+  <!-- Schools -->
+  <div class="flex flex-col p-[16px] md:p-[32px] gap-[24px] pt-[50px]">
+    <p
+      class="text-[#1D2026] text-center font-semibold text-[32px] leading-[40px]"
+    >
+      6.3k trusted schools
+    </p>
+    <p
+      class="text-[#6E7485] font-normal text-[16px] leading-[28px] text-center"
+    >
+      Nullam egestas tellus at enim ornare tristique. Class aptent taciti
+      sociosqu ad litora torquent per conubia nostra.
+    </p>
+  </div>
+  <div
+    class="flex flex-col p-[16px] md:p-[32px] pl-[12px] pr-[12px] gap-[12px]"
+  >
+    <div class="flex flex-col gap-[8px]">
+      <label for="search">Search:</label>
+      <input
+        type="text"
+        [(ngModel)]="searchTerm"
+        (ngModelChange)="currentSchoolIndex = 0"
+        class="border border-[#E0E0E0] rounded-[4px] p-[8px] w-full"
+        placeholder="search schools by name"
+      />
+    </div>
+    <div class="flex flex-col gap-[8px]">
+      <label for="course">Course</label>
+      <select
+        name="course"
+        class="border border-[#E0E0E0] rounded-[4px] p-[8px] w-full"
+        id="course"
+      >
+        <option value="" disabled selected>Select a course</option>
+        <option value="english">English</option>
+        <option value="math">Mathematics</option>
+        <option value="science">Science</option>
+        <option value="history">History</option>
+      </select>
+    </div>
+    <div class="flex flex-col gap-[8px]">
+      @for (school of visibleSchools; track $index) {
+      <div
+        class="h-[100px] flex items-center justify-center w-full shadow-2xl drop-shadow-[#091A4412]"
+      >
+        <span
+          class="text-center font-bold text-[24px] leading-[24px]"
+          [style.color]="school.color"
+          >{{ school.name }}</span
+        >
+      </div>
+
+      }
+      <div class="flex gap-4 mt-2 items-center justify-center">
+        <button
+          (click)="prevSchools()"
+          [disabled]="currentSchoolIndex === 0"
+          class="h-[48px] w-[48px] text-center text-[30px] font-extrabold text-[#9864F1] bg-[#E6DAFC] rounded-[100px]"
+        >
+          &#8592;
+        </button>
+        <div class="flex gap-2">
+          <ng-container *ngFor="let i of visiblePageNumbers">
+            <button
+              (click)="currentSchoolIndex = i * 3"
+              [ngClass]="{
+                'bg-[#9864F1] text-white': currentSchoolIndex / 3 === i,
+                'bg-transparent text-black': currentSchoolIndex / 3 !== i
+              }"
+              class="h-[32px] w-[32px] rounded-full font-bold transition"
+            >
+              {{ i + 1 }}
+            </button>
+          </ng-container>
+        </div>
+        <button
+          (click)="nextSchools()"
+          [disabled]="currentSchoolIndex + 3 >= schoolService.length"
+          class="h-[48px] text-center text-[30px] font-extrabold text-[#9864F1] w-[48px] bg-[#E6DAFC] rounded-[100px]"
+        >
+          &#8594;
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- ChatGpt -->
+  <div class="flex flex-col p-[16px] md:p-[32px] pt-[50px] gap-[20px]">
+    <p
+      class="font-semibold text-[24px] leading-[34px] text-center text-[#171A1F]"
+    >
+      Chatbot for <br />
+      Student Learning
+    </p>
+    <p
+      class="font-normal text-[16px] leading-[28px] text-center text-[#424955]"
+    >
+      Due to the availability of our tutors in a variety of time slots that are
+      totlly tailored to each student's specific paceour scheduling system
+      enables meticulous decision-making about time and student compatibility.
+    </p>
+    <div class="justify-center flex w-full relative h-[334px]">
+      <div
+        class="bg-[#9DEDFF] h-[263px] bottom-0 absolute rounded-t-[200px] w-full"
+      ></div>
+      <img src="/images/bot.png" class="absolute h-[334px]" alt="" />
+    </div>
+    <button
+      class="bg-[#9864F1] h-[40px] w-[114px] rounded-[5px] text-[#FFFFFF] font-semibold text-[16px] leading-[28px] text-center self-center"
+    >
+      Chat GPT
+    </button>
+  </div>
+  <!-- Tutor -->
+  <div
+    class="flex bg-[#FAF6FF] justify-center items-center w-full flex-col gap-[40px] pb-[30px] pt-[30px]"
+  >
+    <p class="text-[#171A1F] font-bold text-[44px] leading-[62px]">
+      Meet our Tutors
+    </p>
+    <button
+      class="bg-[#8353E2] text-[#fff] font-semibold text-[18px] leading-[28px] h-[52px] w-[161px] rounded-[5px] text-center"
+    >
+      Ask a tutor
+    </button>
+    <div
+      class="flex flex-col p-[16px] md:p-[32px] pl-[12px] pr-[12px] gap-[12px]"
+    >
+      <div class="flex flex-col gap-[8px]">
+        <label for="search">Search:</label>
+        <input
+          type="text"
+          [(ngModel)]="searchTerm"
+          (ngModelChange)="currentTutorIndex = 0"
+          class="border border-[#E0E0E0] rounded-[4px] p-[8px] w-full"
+          placeholder="search Tutor by name"
+        />
+      </div>
+      <div class="flex flex-col gap-[8px]">
+        <label for="course">Course</label>
+        <select
+          name="course"
+          class="border border-[#E0E0E0] rounded-[4px] p-[8px] w-full"
+          id="course"
+        >
+          <option value="" disabled selected>Select a course</option>
+        </select>
+      </div>
+      <div class="flex flex-col gap-[25px]">
+        @for (tutor of visibleTutor; track $index) {
+        <div
+          class="h-full gap-[8px] bg-white flex-col flex justify-start w-full shadow-2xl drop-shadow-[#091A4412]"
+        >
+          <img src="{{ tutor.img }}" class="w-[244px] h-[244px]" alt="" />
+          <div class="flex flex-col w-full gap-[8px] p-[12px] items-center">
+            <span
+              class="text-center font-medium text-[#1D2026] text-[16px] leading-[22px]"
+              >{{ tutor.name }}</span
+            >
+            <span
+              class="text-center font-normal text-[#8C94A3] text-[14px] leading-[22px]"
+              >{{ tutor.role }}</span
+            >
+            <div class="flex w-full flex-row justify-between items-center">
+              <div class="flex items-center flex-row gap-[4px]">
+                <img
+                  src="/images/Star.png"
+                  class="w-[16.25px] h-[15.62px]"
+                  alt=""
+                />
+                <span
+                  class="text-center font-medium text-[#1D2026] text-[16px] leading-[22px]"
+                  >{{ tutor.rate }}
+                </span>
+              </div>
+              <p class="font-medium text-[14px] text-[#4E5566] leading-[20px]">
+                {{ tutor.students }}
+                <span class="font-normal text-[#8C94A3]"> students</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        }
+        <div class="flex gap-4 mt-2 items-center justify-center">
+          <button
+            (click)="prevTutor()"
+            [disabled]="currentTutorIndex === 0"
+            class="h-[48px] w-[48px] text-center text-[30px] font-extrabold text-[#9864F1] bg-[#E6DAFC] rounded-[100px]"
+          >
+            &#8592;
+          </button>
+          <div class="flex gap-2">
+            <ng-container *ngFor="let i of visibleTutorPageNumbers">
+              <button
+                (click)="currentTutorIndex = i * 2"
+                [ngClass]="{
+                  'bg-[#9864F1] text-white': currentTutorIndex / 2 === i,
+                  'bg-transparent text-black': currentTutorIndex / 2 !== i
+                }"
+                class="h-[32px] w-[32px] rounded-full font-bold transition"
+              >
+                {{ i + 1 }}
+              </button>
+            </ng-container>
+          </div>
+          <button
+            (click)="nextTutor()"
+            [disabled]="currentTutorIndex + 2 >= tutorService.length"
+            class="h-[48px] text-center text-[30px] font-extrabold text-[#9864F1] w-[48px] bg-[#E6DAFC] rounded-[100px]"
+          >
+            &#8594;
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
